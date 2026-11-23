@@ -1,0 +1,26 @@
+[package]
+name = "uic"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Fast, minimal, UI-change-resilient browser and VNC control CLI powered by Chrome CDP and the Gemini Decisions API"
+repository = "https://github.com/xeb/uic"
+keywords = ["browser", "automation", "cdp", "vnc", "gemini"]
+categories = ["command-line-utilities", "web-programming"]
+
+[dependencies]
+base64 = "0.22"
+clap = { version = "4", features = ["derive", "env"] }
+futures-util = "0.3"
+image = { version = "0.25", default-features = false, features = ["jpeg", "png"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "http2"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+tempfile = "3"
+thiserror = "2"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "process", "net", "time", "io-util", "sync", "fs"] }
+tokio-tungstenite = "0.24"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full"] }
